@@ -10,17 +10,16 @@ Algorithms are divided into three groups:
 
 
 In each task, there is an explanation of the problem at the very beginning of the script where the solution is written. Also, there is a test script for each task.
-So, in each folder, there are solution in the script named main.py and test script named test_main.py.
+So, in each folder, there are solution in the script named `main.py` and test script named `test_main.py`.
 
 The name of the folder in which one task is performed is the name of the task from the leetcode website. The number in the name of the folder is the number from the leetcode website.
 
-All functions have types for the arguments and return value. The used OS is ubuntu 20.04, so the import of the typing library is mandatory.
+All functions have types for the arguments and return value. The used OS is `ubuntu 20.04`, so the import of the typing library is mandatory.
 
 Here is one of the type hints from the documentation:
 
 
-
-'''
+```
 from typing import List, Set, Dict, Tuple, Optional
 
 # For simple built-in types, just use the name of the type
@@ -39,7 +38,7 @@ x: set[int] = {6, 7}
 # capitalized, and the type is imported from 'typing'
 x: List[int] = [1]
 x: Set[int] = {6, 7}
-'''
+```
 
 
 For more details look at https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
