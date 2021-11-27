@@ -1,5 +1,6 @@
 '''
-Given a string columnTitle that represents the column title as appear in an Excel sheet, return its corresponding column number.
+Given a string columnTitle that represents the column title as appear in an
+Excel sheet, return its corresponding column number.
 
 For example:
 
@@ -9,9 +10,9 @@ C -> 3
 ...
 Z -> 26
 AA -> 27
-AB -> 28 
+AB -> 28
 ...
- 
+
 
 Example 1:
 
@@ -29,7 +30,7 @@ Example 4:
 
 Input: columnTitle = "FXSHRXW"
 Output: 2147483647
- 
+
 
 Constraints:
 
@@ -37,6 +38,7 @@ Constraints:
 columnTitle consists only of uppercase English letters.
 columnTitle is in the range ["A", "FXSHRXW"].
 '''
+
 
 class Solution:
     def titleToNumber(self, columnTitle: str) -> int:
