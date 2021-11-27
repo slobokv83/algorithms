@@ -1,5 +1,5 @@
 # algorithms
-##Basic
+## Basic
 This repository is about problems from the website https://leetcode.com/problems/, particularly algorithms.
 
 Tasks are performed in python as a basic programming language.
@@ -16,7 +16,7 @@ So, in each folder, there are solution in the script named `main.py` and test sc
 The name of the folder in which one task is performed is the name of the task from the leetcode website. The number in the name of the folder is the number from the leetcode website.
 
 
-##Type hints cheat sheet
+## Type hints cheat sheet
 
 All functions have types for the arguments and return value. The used OS is `ubuntu 20.04`, so the import of the typing library is mandatory.
 
