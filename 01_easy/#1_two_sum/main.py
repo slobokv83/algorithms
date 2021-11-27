@@ -49,8 +49,7 @@ class Solution:
                 diff = target - num1
                 num_rest = nums[idx1+1:]
                 if diff in num_rest:
-                    for idx2, num2 in enumerate(num_rest):
-                        if num2 == diff:
-                            return [idx1, idx1+idx2+1]
+                    idx2 = num_rest.index(diff)
+                    return [idx1, idx1 + idx2 + 1]
         else:
             return None
