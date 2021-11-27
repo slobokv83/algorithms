@@ -47,7 +47,7 @@ class Solution:
                 (len(nums) in range(2, 10**4 + 1)):
             for idx1, num1 in enumerate(nums):
                 diff = target - num1
-                num_rest = nums[idx1+1:]
+                num_rest = nums[idx1 + 1:]
                 if diff in num_rest:
                     idx2 = num_rest.index(diff)
                     return [idx1, idx1 + idx2 + 1]
