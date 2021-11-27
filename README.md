@@ -1,12 +1,14 @@
 # algorithms
-This repository is about problems from the site https://leetcode.com/problems/, particulary algorithms.
+This repository is about problems from the website https://leetcode.com/problems/, particularly algorithms.
 
 Tasks are performed in python as a basic programming language.
 
-Algoritms are divided in three gropus:
+Algorithms are divided into three groups:
 1. Easy
 2. Medium
 3. Hard
 
 
-In each task, there is explanation of the problem at the very begining of the script where solution is written. Also, there is test script for the each task.
+In each task, there is an explanation of the problem at the very beginning of the script where the solution is written. Also, there is a test script for each task.
+
+The name of the folder in which one task is performed is the name of the task from the leetcode website. The number in the name of the task is the number from the leetcode website.
