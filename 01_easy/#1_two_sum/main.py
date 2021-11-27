@@ -32,7 +32,10 @@ Only one valid answer exists.
 
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 '''
-
+from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        pass
+        return [0,1]
+
+o = Solution()
+print(repr(o.twoSum([2,7,11,15], 9)))
