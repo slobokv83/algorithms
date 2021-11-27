@@ -1,11 +1,13 @@
 '''
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+Given an array of integers nums and an integer target, return indices of the
+two numbers such that they add up to target.
 
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You may assume that each input would have exactly one solution, and you may
+not use the same element twice.
 
 You can return the answer in any order.
 
- 
+
 
 Example 1:
 
@@ -20,7 +22,7 @@ Example 3:
 
 Input: nums = [3,3], target = 6
 Output: [0,1]
- 
+
 
 Constraints:
 
@@ -28,17 +30,20 @@ Constraints:
 -109 <= nums[i] <= 109
 -109 <= target <= 109
 Only one valid answer exists.
- 
 
-Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+
+Follow-up: Can you come up with an algorithm that is less than O(n2) time
+complexity?
 '''
 from typing import List
+
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for num in nums:
-            if num not in range(-109,110):
+            if num not in range(-109, 110):
                 return None
-        if (target in range(-109,110)) and (len(nums) in range(2,105)): 
+        if (target in range(-109, 110)) and (len(nums) in range(2, 105)):
             for idx1, num1 in enumerate(nums):
                 diff = target - num1
                 num_rest = nums[idx1+1:]
