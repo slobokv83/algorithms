@@ -26,9 +26,9 @@ Output: [0,1]
 
 Constraints:
 
-2 <= nums.length <= 104
--109 <= nums[i] <= 109
--109 <= target <= 109
+2 <= nums.length <= 10^4
+-10^9 <= nums[i] <= 10^9
+-10^9 <= target <= 10^9
 Only one valid answer exists.
 
 
@@ -41,9 +41,10 @@ from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for num in nums:
-            if num not in range(-109, 110):
+            if num not in range(-10**9, 10**9 + 1):
                 return None
-        if (target in range(-109, 110)) and (len(nums) in range(2, 105)):
+        if (target in range(-10**9, 10**9 + 1)) and\
+                (len(nums) in range(2, 10**4 + 1)):
             for idx1, num1 in enumerate(nums):
                 diff = target - num1
                 num_rest = nums[idx1+1:]
