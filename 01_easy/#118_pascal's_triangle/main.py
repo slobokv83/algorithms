@@ -20,6 +20,7 @@ Constraints:
 
 1 <= numRows <= 30
 '''
+from typing import List
 
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:

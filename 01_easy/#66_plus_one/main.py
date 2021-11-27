@@ -41,6 +41,7 @@ Constraints:
 0 <= digits[i] <= 9
 digits does not contain any leading 0's.
 '''
+from typing import List
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:

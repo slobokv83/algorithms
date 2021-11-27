@@ -25,6 +25,7 @@ Constraints:
 
 1 <= n <= 104
 '''
+from typing import List
 
 class Solution:
     def fizzBuzz(self, n: int) -> List[str]:
