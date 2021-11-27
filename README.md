@@ -10,5 +10,6 @@ Algorithms are divided into three groups:
 
 
 In each task, there is an explanation of the problem at the very beginning of the script where the solution is written. Also, there is a test script for each task.
+So, in each folder, there are solution in the script named main.py and test script named test_main.py.
 
-The name of the folder in which one task is performed is the name of the task from the leetcode website. The number in the name of the task is the number from the leetcode website.
+The name of the folder in which one task is performed is the name of the task from the leetcode website. The number in the name of the folder is the number from the leetcode website.
