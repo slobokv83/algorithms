@@ -5,20 +5,34 @@ o = Solution()
 
 
 def test_main():
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() == 0
-    assert o.longestCommonPrefix() is None
-    assert o.longestCommonPrefix() is None
-    assert o.longestCommonPrefix() is None
-    assert o.longestCommonPrefix() is None
-    assert o.longestCommonPrefix() is None
+    assert o.longestCommonPrefix(["flower", "flow", "flight"]) == "fl"
+    assert o.longestCommonPrefix(["dog", "racecar", "car"]) == ""
+    assert o.longestCommonPrefix(["ffflower", "ffflow", "ffflight"]) == "fffl"
+    assert o.longestCommonPrefix(["fllowwwer", "fllowww", "fllowwwight"]) ==\
+        "fllowww"
+    assert o.longestCommonPrefix(["frlower", "fflow", "fflight"]) == "f"
+    assert o.longestCommonPrefix(["fllowwwer",
+                                  "rllowww",
+                                  "fllowwwightaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+                                  "cccccccccccccccccccccccccccccccccccccccc"
+                                  "dddddddddddddddddddddddddddddddddddddddd"
+                                  "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"]
+                                 ) is None
+    assert o.longestCommonPrefix(["flower", "flow", "flight"] * 67) is None
+    assert o.longestCommonPrefix([""]) == ""
+    assert o.longestCommonPrefix(["a"]) == "a"
+    assert o.longestCommonPrefix(["abc"]) == "abc"
+    assert o.longestCommonPrefix(["flower", "flower", "flower", "flower"]) ==\
+        "flower"
+    assert o.longestCommonPrefix(["c", "c"]) == "c"
+    assert o.longestCommonPrefix(["abc", "abc"]) == "abc"
+    assert o.longestCommonPrefix(["abc", "vabc"]) == ""
+    assert o.longestCommonPrefix(["a", "v"]) == ""
+    assert o.longestCommonPrefix(["", "v"]) == ""
+    assert o.longestCommonPrefix(["a", ""]) == ""
+    assert o.longestCommonPrefix(["aaa", "aa", "aaa"]) == "aa"
+    assert o.longestCommonPrefix(["a", "a", "b"]) == ""
 
 
 if __name__ == '__main__':

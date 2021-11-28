@@ -28,4 +28,30 @@ from typing import List
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        pass
+        if len(strs) not in range(1, 201):
+            return None
+        for i, str in enumerate(strs):
+            if len(str) not in range(0, 201):
+                return None
+        prefix = ""
+        flag = False
+        for id, i in enumerate(strs[0]):
+            if len(strs) > 1:
+                for j in range(1, len(strs)):
+                    if id < len(strs[j]):
+                        if i == strs[j][id]:
+                            if id == len(strs[j]) - 1:
+                                flag = True
+                            if j == len(strs) - 1:
+                                prefix += strs[j][id]
+                        else:
+                            return prefix
+                if flag:
+                    return prefix
+            else:
+                prefix += i
+        return prefix
+
+
+o = Solution()
+print(repr(o.longestCommonPrefix(["flower", "flower", "flower", "flower"])))
