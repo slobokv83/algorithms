@@ -5,20 +5,16 @@ o = Solution()
 
 
 def test_main():
-    assert o.romanToInt() == 0
-    assert o.romanToInt() == 0
-    assert o.romanToInt() == 0
-    assert o.romanToInt() == 0
-    assert o.romanToInt() == 0
-    assert o.romanToInt() == 0
-    assert o.romanToInt() == 0
-    assert o.romanToInt() == 0
-    assert o.romanToInt() == 0
-    assert o.romanToInt() is None
-    assert o.romanToInt() is None
-    assert o.romanToInt() is None
-    assert o.romanToInt() is None
-    assert o.romanToInt() is None
+    assert o.romanToInt("III") == 3
+    assert o.romanToInt("IV") == 4
+    assert o.romanToInt("IX") == 9
+    assert o.romanToInt("LVIII") == 58
+    assert o.romanToInt("MCMXCIV") == 1994
+    assert o.romanToInt("MCSMXCIV") is None
+    assert o.romanToInt("MMMCMXCIX") == 3999
+    assert o.romanToInt("MMMM") == 4000
+    assert o.romanToInt("MMMDCCCLXXXVIII") == 3888
+    assert o.romanToInt("MMMMDCCCLXXXVIII") is None
 
 
 if __name__ == '__main__':
