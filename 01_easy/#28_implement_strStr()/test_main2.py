@@ -1,5 +1,5 @@
 from time import time
-from main import Solution
+from main2 import Solution
 import logging
 
 o = Solution()

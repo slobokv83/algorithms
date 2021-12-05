@@ -1,18 +1,22 @@
 from time import time
-from main import Solution
+from main2 import Solution
 import logging
 
 o = Solution()
 
 
 def test_main():
-    for i in range(1):
-        assert o.strStr("mississippi", "issip") == 4
-        assert o.strStr("aabaabbbaabbbbabaaab", "abaa") == 1
-        assert o.strStr("hello", "ll") == 2
-        assert o.strStr("aaaaa", "bba") == -1
-        assert o.strStr("", "") == 0
-        assert o.strStr("a" * 5 * 10**4, "a" * 4 * 10**4 + "b") == -1
+    for i in range(1000):
+        assert o.romanToInt("III") == 3
+        assert o.romanToInt("IV") == 4
+        assert o.romanToInt("IX") == 9
+        assert o.romanToInt("LVIII") == 58
+        assert o.romanToInt("MCMXCIV") == 1994
+        # assert o.romanToInt("MCSMXCIV") is None
+        assert o.romanToInt("MMMCMXCIX") == 3999
+        assert o.romanToInt("MMMM") == 4000
+        assert o.romanToInt("MMMDCCCLXXXVIII") == 3888
+        assert o.romanToInt("MMMMDCCCLXXXVIII") is None
 
 
 if __name__ == '__main__':

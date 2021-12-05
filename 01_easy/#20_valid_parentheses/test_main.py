@@ -1,24 +1,49 @@
 from main import Solution
 import logging
+from time import time
 
 o = Solution()
 
 
 def test_main():
-    assert o.isValid() == 0
-    assert o.isValid() == 0
-    assert o.isValid() == 0
-    assert o.isValid() == 0
-    assert o.isValid() == 0
-    assert o.isValid() == 0
-    assert o.isValid() == 0
-    assert o.isValid() == 0
-    assert o.isValid() == 0
-    assert o.isValid() is None
-    assert o.isValid() is None
-    assert o.isValid() is None
-    assert o.isValid() is None
-    assert o.isValid() is None
+    for i in range(1000):
+        assert o.isValid("()") is True
+        assert o.isValid("[]") is True
+        assert o.isValid("{}") is True
+        assert o.isValid("()[]{}") is True
+        assert o.isValid("{[]}") is True
+        assert o.isValid("([]{})") is True
+        assert o.isValid("((([[[[{{{{{()[{}[]]}}}}}]]]])))") is True
+        assert o.isValid("((([[[[{{{{{()[{{{}[][]}}]}}}}}]]]])))") is True
+        assert o.isValid("((()((([[[]]])))))") is True
+        assert o.isValid("((([[[[{{{{{()[{{{}[][]}]}}}}]]]])))") is False
+        assert o.isValid("((([[[[{{{{{()[{}[]]}}}}}]]]])))]") is False
+        assert o.isValid("(()))(") is False
+        assert o.isValid("(]") is False
+        assert o.isValid("(}") is False
+        assert o.isValid("[)") is False
+        assert o.isValid("[}") is False
+        assert o.isValid("{)") is False
+        assert o.isValid("{]") is False
+        assert o.isValid("([)]") is False
+        assert o.isValid("([[)]]") is False
+        assert o.isValid("((([[[[{{{{{()[{}[][]}]}}}}]]]])))") is False
+        assert o.isValid("((()((([[[]]]))))") is False
+        assert o.isValid("([]{}]") is False
+        assert o.isValid("(") is False
+        assert o.isValid("[") is False
+        assert o.isValid("{") is False
+        assert o.isValid(")") is False
+        assert o.isValid("]") is False
+        assert o.isValid("}") is False
+        assert o.isValid(")(") is False
+        assert o.isValid("][") is False
+        assert o.isValid("}{") is False
+        assert o.isValid("((((((((") is False
+        assert o.isValid("([{)(}])") is False
+        assert o.isValid("(((([[[[{{{{{()[{}][]}}}}}]]]])))") is False
+    # assert o.isValid("()[]{}.") is None
+    # assert o.isValid("asdscvvvvvvfgyhjiop;1234567") is None
 
 
 if __name__ == '__main__':
@@ -27,7 +52,8 @@ if __name__ == '__main__':
                         format='%(asctime)s %(levelname)-8s %(message)s',
                         datefmt='\033[36m%Y-%m-%d %H:%M:%S')
     try:
+        start = time()
         test_main()
-        logger.info('\x1b[32mPASSED')
+        logger.info(f'\x1b[32mPASSED time: {(time() - start) * 1000} ms')
     except Exception as e:
         logger.error(f"\x1b[31mFAILED \x1b[33m{e}", exc_info=True)

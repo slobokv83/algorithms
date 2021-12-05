@@ -51,3 +51,7 @@ class Solution:
             else:
                 prefix += i
         return prefix
+
+
+o = Solution()
+print(repr(o.longestCommonPrefix(["flower", "flower", "flower", "flower"])))

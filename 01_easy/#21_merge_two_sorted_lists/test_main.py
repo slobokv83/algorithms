@@ -5,20 +5,20 @@ o = Solution()
 
 
 def test_main():
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() == 0
-    assert o.mergeTwoLists() is None
-    assert o.mergeTwoLists() is None
-    assert o.mergeTwoLists() is None
-    assert o.mergeTwoLists() is None
-    assert o.mergeTwoLists() is None
+    assert o.mergeTwoLists([1, 2, 4], [1, 3, 4]) == [1, 1, 2, 3, 4, 4]
+    # assert o.mergeTwoLists() == 0
+    # assert o.mergeTwoLists() == 0
+    # assert o.mergeTwoLists() == 0
+    # assert o.mergeTwoLists() == 0
+    # assert o.mergeTwoLists() == 0
+    # assert o.mergeTwoLists() == 0
+    # assert o.mergeTwoLists() == 0
+    # assert o.mergeTwoLists() == 0
+    # assert o.mergeTwoLists() is None
+    # assert o.mergeTwoLists() is None
+    # assert o.mergeTwoLists() is None
+    # assert o.mergeTwoLists() is None
+    # assert o.mergeTwoLists() is None
 
 
 if __name__ == '__main__':

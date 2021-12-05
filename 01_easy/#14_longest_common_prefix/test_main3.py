@@ -11,15 +11,6 @@ def test_main():
     assert o.longestCommonPrefix(["fllowwwer", "fllowww", "fllowwwight"]) ==\
         "fllowww"
     assert o.longestCommonPrefix(["frlower", "fflow", "fflight"]) == "f"
-    # assert o.longestCommonPrefix(["fllowwwer",
-    #                               "rllowww",
-    #                               "fllowwwightaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-    #                               "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
-    #                               "cccccccccccccccccccccccccccccccccccccccc"
-    #                               "dddddddddddddddddddddddddddddddddddddddd"
-    #                               "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"]
-    #                              ) is None
-    # assert o.longestCommonPrefix(["flower", "flow", "flight"] * 67) is None
     assert o.longestCommonPrefix([""]) == ""
     assert o.longestCommonPrefix(["a"]) == "a"
     assert o.longestCommonPrefix(["abc"]) == "abc"

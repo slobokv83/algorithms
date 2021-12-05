@@ -36,5 +36,39 @@ haystack and needle consist of only lower-case English characters.
 
 
 class Solution:
+    def ret_idx(self, i, haystack, needle):
+        len_needle = len(needle)
+        j = 0
+        for i in range(i, len(haystack)):
+            if haystack[i] == needle[j]:
+                j += 1
+            else:
+                return None
+            if j == len_needle:
+                return i - len_needle + 1
+
     def strStr(self, haystack: str, needle: str) -> int:
-        pass
+        res = 0
+        if needle == "":
+            return 0
+
+        for i, hay in enumerate(haystack):
+
+            if hay == needle[0]:
+                res = self.ret_idx(i, haystack, needle)
+                if res is not None:
+                    return res
+                # flag = True
+            # if flag:
+            #     if hay == needle[j]:
+            #         j += 1
+            #     else:
+            #         j = 0
+            #         flag = False
+            #     if j == len_needle:
+            #         return i - len_needle + 1
+        return -1
+
+
+o = Solution()
+print(repr(o.strStr("aabaabbbaabbbbabaaab", "abaa")))

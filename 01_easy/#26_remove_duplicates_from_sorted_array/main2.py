@@ -60,20 +60,12 @@ from typing import List
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        cnt = 0
-        sub = 0
-        for i in range(len(nums)):
-            i -= sub
-            if i > 0:
-                if nums[i - 1] == nums[i]:
-                    nums.remove(nums[i])
-                    # nums.append("_")
-                    sub += 1
-                else:
-                    cnt += 1
-            else:
-                cnt += 1
-        return cnt, nums
+        i1 = 0
+        for i2 in range(len(nums)):
+            if nums[i1] != nums[i2]:
+                i1 += 1
+                nums[i1] = nums[i2]
+        return i1 + 1
 
 
 o = Solution()
