@@ -30,14 +30,14 @@ Constraints:
 class Solution:
     def mySqrt(self, x: int) -> int:
         temp = []
-        for i in range(0, x + 1):
+        if x == 0:
+            return 0
+        for i in range(x):
             temp += [x - i * i]
             if temp[-1] <= -1:
                 return i - 1
-            if x == 1:
-                return 1
-        return 0
+        return 1
 
 
 o = Solution()
-print(repr(o.mySqrt(1)))
+print(repr(o.mySqrt(0)))

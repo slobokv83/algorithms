@@ -26,18 +26,28 @@ Constraints:
 0 <= x <= 2^31 - 1
 '''
 
+# Babylonian method
+
 
 class Solution:
+    def calc(self, x: int, num: float) -> float:
+        print(num)
+        return (num + x/num)/2
+
     def mySqrt(self, x: int) -> int:
-        temp = []
-        for i in range(0, x + 1):
-            temp += [x - i * i]
-            if temp[-1] <= -1:
-                return i - 1
-            if x == 1:
-                return 1
-        return 0
+        x_len = len(str(x))
+        num1 = x
+        if x == 2:
+            return 1
+        if x_len % 2 == 0:
+            num = 6 * 10 ** (x_len/2 - 1)
+        else:
+            num = 2 * 10 ** ((x_len - 1)/2)
+        while abs(num1 - num) >= 1:
+            num1 = num
+            num = self.calc(x, num)
+        return int(num)
 
 
 o = Solution()
-print(repr(o.mySqrt(1)))
+print(repr(o.mySqrt(2)))

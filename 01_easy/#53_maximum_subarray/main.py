@@ -35,4 +35,50 @@ from typing import List
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        pass
+        max_subarray = []
+        negative_nums = [0]
+        temp_subarray = []
+        previous_subarray = []
+        prev_sum = 0
+        temp_sum = 0
+        flag = False
+        for i, num in enumerate(nums):
+            # put counter for max_subarray
+            # put compare between two max_subarrays
+            if num < 0:
+                if flag:
+                    continue
+                if prev_sum > temp_sum:
+                    if prev_sum + negative_nums[-1] > 0:
+                        # put flag
+                        flag = True
+                        max_subarray += [negative_nums[-1]] + temp_subarray
+                        temp_sum += negative_nums[-1] + prev_sum
+                    else:
+                        max_subarray = previous_subarray
+                else:
+                    if prev_sum + negative_nums[-1] > 0:
+                        max_subarray += [negative_nums[-1]] + temp_subarray
+                        temp_sum += negative_nums[-1] + prev_sum
+                    else:
+                        print("temp:", temp_subarray)
+                        max_subarray = temp_subarray
+                negative_nums.append(num)
+                previous_subarray = temp_subarray
+                prev_sum = temp_sum
+                temp_subarray = []
+                temp_sum = 0
+            else:
+                temp_subarray.append(num)
+                temp_sum += num
+            if i == len(nums) - 1:
+                if prev_sum + negative_nums[-1] > 0:
+                    # put logic for last
+                    pass
+        return max_subarray, temp_sum
+
+
+o = Solution()
+ls_subarray = [-5, 2, 1, -4, 1, 2, 3, 4, -5, 2, 1, -3, 6, -1, -2, -3, 4, -5, 2,
+               1, -4, 1, 2, 3, 4, -5, 2, 1, -3, 6, -1, -2, -3, 4]
+print(repr(o.maxSubArray(ls_subarray)))

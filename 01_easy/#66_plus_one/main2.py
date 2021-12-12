@@ -49,25 +49,18 @@ from typing import List
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        if len(digits) == 1:
-            if digits[0] + 1 == 10:
-                return [1, 0]
-            else:
-                return [digits[0] + 1]
-        else:
-            for i in range(len(digits) - 1, -1, -1):
-                if i == (len(digits) - 1):
-                    digits[i] += 1
-                if i < (len(digits) - 1) and digits[i+1] == 10:
-                    digits[i+1] = 0
-                    digits[i] += 1
-                if i == 0 and digits[1] == 10:
-                    digits[1] = 0
-                if digits[0] == 10:
-                    digits[0] = 0
-                    return [1] + digits
+        dlen = len(digits) - 1
+        for i in range(dlen + 1):
+            if i == 0:
+                digits[dlen] += 1
+            elif digits[dlen-i+1] == 10:
+                digits[dlen-i+1] = 0
+                digits[dlen-i] += 1
+            if i == dlen and digits[0] == 10:
+                digits[0] = 0
+                return [1] + digits
         return digits
 
 
 o = Solution()
-print(repr(o.plusOne([0])))
+print(repr(o.plusOne([9])))
