@@ -30,5 +30,27 @@ Constraints:
 
 
 class Solution:
+    def factorial(self, n):
+        fact = 1
+        for i in range(1, n+1):
+            fact = fact * i
+        return fact
+
     def climbStairs(self, n: int) -> int:
-        pass
+        twoes = int(n / 2)
+        sum = 0
+        if n % 2 == 0:
+            ones = 0
+        else:
+            ones = 1
+        for _ in range(twoes + 1):
+            sum += self.factorial(twoes + ones) / (self.factorial(twoes) *
+                                                   self.factorial(ones))
+            twoes -= 1
+            ones += 2
+
+        return int(sum)
+
+
+o = Solution()
+print(repr(o.climbStairs(45)))
